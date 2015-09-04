@@ -1,0 +1,19 @@
+{
+  "name": "frontend-devil",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Veremey",
+  "authors": [
+    "Serhii Veremiychk <veremey4uk@gmail.com>"
+  ],
+  "description": "Veremey boilerplate for html+js+css apps",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "2.*"
+  },
+  "devDependencies": {
+    "jquery-validation": "~1.13.1"
+  }
+}

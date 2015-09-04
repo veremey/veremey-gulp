@@ -1,0 +1,92 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$codedby-name: 'codedby'
+$codedby-x: 20px
+$codedby-y: 5px
+$codedby-offset-x: -20px
+$codedby-offset-y: -5px
+$codedby-width: 47px
+$codedby-height: 5px
+$codedby-total-width: 69px
+$codedby-total-height: 30px
+$codedby-image: 'sprite.png'
+$codedby: 20px 5px -20px -5px 47px 5px 69px 30px 'sprite.png' 'codedby'
+$coderiver-name: 'coderiver'
+$coderiver-x: 20px
+$coderiver-y: 0px
+$coderiver-offset-x: -20px
+$coderiver-offset-y: 0px
+$coderiver-width: 49px
+$coderiver-height: 5px
+$coderiver-total-width: 69px
+$coderiver-total-height: 30px
+$coderiver-image: 'sprite.png'
+$coderiver: 20px 0px -20px 0px 49px 5px 69px 30px 'sprite.png' 'coderiver'
+$marker-name: 'marker'
+$marker-x: 0px
+$marker-y: 0px
+$marker-offset-x: 0px
+$marker-offset-y: 0px
+$marker-width: 20px
+$marker-height: 30px
+$marker-total-width: 69px
+$marker-total-height: 30px
+$marker-image: 'sprite.png'
+$marker: 0px 0px 0px 0px 20px 30px 69px 30px 'sprite.png' 'marker'
+$spritesheet-width: 69px
+$spritesheet-height: 30px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: $codedby $coderiver $marker
+$spritesheet: 69px 30px 'sprite.png' $spritesheet-sprites
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(../img/#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
