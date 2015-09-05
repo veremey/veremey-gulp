@@ -1,9 +1,9 @@
 {
-  "name": "frontend-devil",
+  "name": "Veremey",
   "version": "1.0.0",
-  "homepage": "https://github.com/Veremey",
+  "homepage": "https://github.com/veremey/veremey-gulp",
   "authors": [
-    "Serhii Veremiychk <veremey4uk@gmail.com>"
+    "Serhii Veremiychuk <veremey4uk@gmail.com>"
   ],
   "description": "Veremey boilerplate for html+js+css apps",
   "moduleType": [
