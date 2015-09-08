@@ -14,11 +14,13 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
     plumber = require('gulp-plumber'),
+    jade = require('gulp-jade'),
     reload = browserSync.reload;
 
 var path = {
     build: {
         html: 'build/',
+        jade: 'build/jade/',
         js: 'build/js/',
         jsLibs: 'build/js/partials',
         css: 'build/css',
@@ -29,6 +31,7 @@ var path = {
     },
     src: {
         html: 'src/*.html',
+        jade: 'src/**/*.jade',
         js: 'src/js/**/*.js',
         css: 'src/css/*.*',
         sass: 'src/sass/screen.sass',
@@ -39,6 +42,7 @@ var path = {
     },
     watch: {
         html: 'src/**/*.html',
+        jade: 'src/jade/**/*.jade',
         js: 'src/js/**/*.js',
         css: 'src/css/*.*',
         sass: 'src/sass/**/*.*',
@@ -79,6 +83,16 @@ gulp.task('html:build', function () {
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
+});
+
+gulp.task('jade:build', function () {
+    gulp.src(path.src.jade)
+        .pipe(plumber())
+        .pipe(jade({
+            pretty: true
+            }))
+      .pipe(gulp.dest(path.build.html))
+      .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
@@ -168,6 +182,7 @@ gulp.task('fonts:build', function() {
 
 gulp.task('build', [
     'html:build',
+    'jade:build',
     'js:build',
     'sass:build',
     'sprite:build',
@@ -180,6 +195,9 @@ gulp.task('build', [
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
        gulp.start('html:build');
+    });
+    watch([path.watch.jade], function(event, cb) {
+       gulp.start('jade:build');
     });
     watch([path.watch.sass], function(event, cb) {
         gulp.start('sass:build');
