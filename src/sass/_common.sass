@@ -34,11 +34,11 @@
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
-// ## fonts 
+// ## fonts
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
+// +font(book, cytiapro-black-webfont)
 // =book
-// 	font-family: "book", Arial, sans-serif 
+// 	font-family: "book", Arial, sans-serif
 // insert pics into css
 // div
 // 	+pic("blabla.png")
@@ -47,12 +47,36 @@
 // p
 // 	+jpg(bla)
 
+$n: transparent
+
+
 body
-	font-family: Arial, sans-serif 
-	font-size: 1.2rem
-	line-height: 1.4
-	color: #000 
+	font-family: Arial, sans-serif
+	font-size: 14px
+	line-height: 1.2
+	color: #000
 	min-width: 1100px
+
+.out
+	position: relative
+	min-height: 100%
+	margin: 0 auto
+	+clr
+
+.push
+	clear: both
+	height: 205px // footer height variable
+
+.footer
+	width: 100%
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 100%
+	height: 205px // footer height variable
+	background-color: #0b1a2c
+	+clr
+
 
 .icon-marker
 	display: inline-block

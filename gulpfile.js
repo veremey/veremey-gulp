@@ -161,6 +161,7 @@ gulp.task('image:build', function () {
         // .pipe(imagemin({
         //     progressive: true,
         //     svgoPlugins: [{removeViewBox: false}],
+        //     optimizationLevel: 7,
         //     use: [pngquant()],
         //     interlaced: true
         // }))
