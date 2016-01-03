@@ -1,26 +1,96 @@
-=s($sprite)
-	+sprite($sprite)
-// width
+@import media
+// less than X
+=r($width)
+	@media only screen and (max-width: $width+ "px")
+		@content
 
-// height
+// more than X
+=rm($width)
+	@media only screen and (min-width: $width+ "px")
+		@content
+
+// height, less than X
 =rh($height)
 	@media only screen and (max-height: $height + "px")
 		@content
 
-=fs($sizeValue: 16)
-	font-size: $sizeValue + px
-	font-size: $sizeValue / 10 + rem
+=clr
+	&:after
+		content: " "
+		display: table
+		clear: both
+	*zoom: 1
+
+=g($color1, $color2)
+	background-color: $color1
+	background-image: linear-gradient($color1, $color2)
+
+=gh($color1, $color2)
+	background-color: $color1
+	background-image: linear-gradient(to right, $color1, $color2)
+
+// easy vertical-align at center
+=vcenter
+	position: absolute
+	top: 50%
+	left: 50%
+	+translate(-50%,-50%)
+
+// bulletproof vertical-align
+=vertical
+	text-align: center
+	font-size: 0
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+		
+// justify, set on parent
+=justify
+	text-align: justify
+	line-height: 0
+	font-size: 0
+	text-justify: newspaper
+	zoom: 1
+	text-align-last: justify
+	&:after
+		content: ""
+		display: inline-block
+		width: 100%
+		height: 0px
+		visibility: hidden
+		overflow: hidden
+		
+// fast font-family
+=font($alias, $name)
+	@font-face
+		font-family: $alias
+		src: url("fonts/" + $name + ".eot")
+		src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff2") format("woff2"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
+		font-weight: normal
+		font-style: normal
+// usage:
+//+font(black, cytiapro-black-webfont)
+
+=placeholder
+	&::placeholder
+		@content
 
 =text-overflow
 	overflow: hidden
 	-ms-text-overflow: ellipsis
 	text-overflow: ellipsis
 	white-space: nowrap
-
+	
 =ie
 	*display: inline
 	*zoom: 1
-
+	
+=box
+	box-sizing: border-box
+	
 %pseudo
 	position: relative
 	&:before,&:after
@@ -36,57 +106,23 @@
 	top: 0
 	left: 0
 	width: 100%
-	height: 100%    
-	
+	height: 100%
+
 =cover
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: 50% 50%
-	
+
+=bg-size($width: 100%, $height: 100%)
+	background-size: $width $height
+
 // retina, also available as +hdpi
 =retina
 	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
 		@content
 
-=box
-	box-sizing: border-box
-
-// vertical-align at center
-=vcenter
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%,-50%)  
-	
-//simple gradient
-=g($color1, $color2)
-	background-image: linear-gradient($color1, $color2)
-=g3($color1, $color2, $color3)
-	background-image: linear-gradient($color1, $color2, $color3)
-=gh($color1, $color2)
-	background-image: linear-gradient(left, $color1, $color2)
-
-//asdfast font-family
-=font($alias, $name)
-	@font-face
-		font-family: $alias
-		src: url("../fonts/" + $name + ".eot")
-		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype")
-		font-weight: normal
-		font-style: normal
-// usage: 
-//+font(black, cytiapro-black-webfont)
-
-// ROTATE
-=rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
-	transform: rotate($deg + deg)
-
-// TRANSITION
-=transition($what)
-	transition: $what
-
 =tr($what)
-	+transition($what)
+	transition: $what
 
 =hide-text
 	font: 0/0 a
@@ -95,57 +131,6 @@
 
 =hidetext
 	+hide-text
-
-=justify
-	text-align: justify
-	line-height: 0
-	font-size: 0
-	text-justify: newspaper
-	zoom: 1
-	text-align-last: justify
-	&:after
-		content: ""
-		display: inline-block
-		width: 100%
-		height: 0px
-		visibility: hidden
-		overflow: hidden
-=vertical
-	text-align: center
-	font-size: 0
-	&:before
-		content: ""
-		display: inline-block
-		vertical-align: middle
-		width: 0
-		height: 100% 
-
-=clr
-	&:after
-		content: " "
-		display: table
-		clear: both
-	*zoom: 1
-
-=placeholder-color($color)
-	&:-moz-placeholder,
-	&::-moz-placeholder
-		color: $color
-		opacity: 1
-	&::-webkit-input-placeholder
-		color: $color
-
-=placeholder
-	&:-ms-input-placeholder
-		@content
-	&:-moz-placeholder
-		@content
-	&::-moz-placeholder
-		@content
-	&::-webkit-input-placeholder
-		@content
-	&::placeholder
-		@content
 
 =gray
 	filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale")
@@ -203,7 +188,7 @@
 	+selection
 
 =gpu
-	transform: translate3d(0, 0, 0)
+	+transform(translate3d(0, 0, 0))
 
 =smooth-triangle
 	transform: rotate(0.05deg)
@@ -251,7 +236,7 @@
 		border-width: 0 0 $height + px $width + px
 		border-color: transparent transparent $bg transparent
 	@if $direction == bl
-		border-width: $width + px 0 0 $height + px
+		border-width: $height + px 0 0 $width + px
 		border-color: transparent transparent transparent $bg
 // example
 // +arr(500,50, #000, l)
@@ -259,16 +244,30 @@
 
 =rotate($var)
 	transform: rotate($var+deg)
-	
+
 =blur($var)
+	-webkit-filter: blur($var)
 	filter: blur($var)
+	
 =scale($var)
 	transform: scale($var)
+
+=counter($var, $sep)
+	counter-reset: list + $var
+	> li
+		&:before
+			content: counter(list + $var) $sep
+			counter-increment: list + $var
+
+@function makelongshadow($color)
+	$val: 0px 0px $color
+	@for $i from 1 through 200
+		$val: #{$val}, #{$i}px #{$i}px #{$color}
+	@return $val
+
+=longshadow($color)
+	text-shadow: makelongshadow($color)
 	
-=svg($name, $width, $height)
-	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
-	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
-	background-size: #{$width}px #{$height}px
-	width: #{$width}px
-	height: #{$height}px
-	display: inline-block
+=fs($sizeValue: 16)
+	font-size: $sizeValue + px
+	font-size: $sizeValue / 10 + rem

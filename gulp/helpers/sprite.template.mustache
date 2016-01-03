@@ -1,8 +1,15 @@
+{
+	// Default options
+	'functions': true
+}
+
 $icons: (0:0)
-$icons: map-merge($icons,(codedby: (X: 0px, Y:-9px, W: 47px, H: 5px, TW: 49px, TH: 14px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(coderiver: (X: 0px, Y:0px, W: 49px, H: 5px, TW: 49px, TH: 14px, IMG: '../img/icons.png')))
+{{#items}}
+$icons: map-merge($icons,({{name}}: (X: {{px.offset_x}}, Y:{{px.offset_y}}, W: {{px.width}}, H: {{px.height}}, TW: {{px.total_width}}, TH: {{px.total_height}}, IMG: '{{{escaped_image}}}')))
+{{/items}}
 
 
+{{#options.functions}}
 // Gets an attribute from the sass map
 @function icon-attr($icon, $attr)
 	$icon: map-get($icons, $icon)
@@ -28,6 +35,7 @@ $icons: map-merge($icons,(coderiver: (X: 0px, Y:0px, W: 49px, H: 5px, TW: 49px, 
 	$th: icon-attr($iconName, TH)
 	background-size: $tw/2 $th/2  	
 
+{{/options.functions}}
 
 @mixin s($i)
 	+sprite($i)
@@ -36,16 +44,10 @@ $icons: map-merge($icons,(coderiver: (X: 0px, Y:0px, W: 49px, H: 5px, TW: 49px, 
 @mixin sr($i)
 	+sprite-retina($i)	
 
-//
-//.icon-codedby
-//	width: 47px
-//	height: 5px
-//	background-image: url('../img/icons.png')
-//	background-position: 0px -9px
-//
-//.icon-coderiver
-//	width: 49px
-//	height: 5px
-//	background-image: url('../img/icons.png')
-//	background-position: 0px 0px
-//
+//{{#items}}
+//.icon-{{name}}
+//	width: {{px.width}}
+//	height: {{px.height}}
+//	background-image: url('{{{escaped_image}}}')
+//	background-position: {{px.offset_x}} {{px.offset_y}}
+//{{/items}}
