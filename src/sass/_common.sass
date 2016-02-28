@@ -1,36 +1,59 @@
-// # SHORT HOWTO
-// ## Sprites
-//     .whatever
-// 			+s(codedby) 
-// ## gradient example
-//     	+g(#232323, #5c5c5c);
-//	   horizontal
-//     	+gh(#232323, #5c5c5c);
-// ## making bw-images
-//     img
-//			@extend %gray
-// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +r(320)
-//			display: none
-// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
-//
-// ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
-//			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
-//				display: none
-// ## fonts
-// Save fonts to /src/fonts
-// +font(book, cytiapro-black-webfont)
-// and create mixin
-// =book
-// 	font-family: "book", Arial, sans-serif
+
++font('ProximaNovaLight', 'ProximaNovaLight')
++font('ProximaNovaSemibold', 'ProximaNovaSemibold')
++font('LatoRegular', 'LatoRegular')
++font('LatoLight', 'LatoLight')
++font('MyriadProRegular', 'MyriadProRegular')
+
+=l
+	font-family: 'LatoRegular', Arial, sans-serif
+=ll
+	font-family: 'LatoLight', Arial, sans-serif
+
+=ps
+	font-family: 'ProximaNovaSemibold', Arial, sans-serif
+=pnr
+	font-family: 'ProximaNovaRegular', Arial, sans-serif
+=pl
+	font-family: 'ProximaNovaLight', Arial, sans-serif
+	font-weight: 100
+=play
+	font-family: 'Playfair Display', serif
+	font-weight: 100
+=al
+	font-family: Arial, sans-serif
+	font-weight: 300
+
+// colors
+$n: transparent
+$FFF: #fff4e0
+$green: #3f885f
+$brown: #644650
+// $green: #4bb77b
+// $brown: #70555d
+
 
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
-	line-height: 1.4
-	
+	font-family:  Arial, sans-serif
+	font-size: 20px
+	line-height: 1.22
+	background-color: #333
+	+r(1600)
+		font-size: 18px
+
 // common blocks
+
+.out
+	max-width: 2540px
+	min-width: 1280px
+	width: 100%
+	position: relative
+	margin: 0 auto
+	background-color: #fff
+	+clr
+
+
+.layout
+	position: relative
+	margin: 30px 30px 0
+	+clr

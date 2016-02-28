@@ -34,7 +34,7 @@
 	position: absolute
 	top: 50%
 	left: 50%
-	+translate(-50%,-50%)
+	transform: translate(-50%,-50%)
 
 // bulletproof vertical-align
 =vertical
@@ -46,7 +46,7 @@
 		vertical-align: middle
 		width: 0
 		height: 100%
-		
+
 // justify, set on parent
 =justify
 	text-align: justify
@@ -62,7 +62,7 @@
 		height: 0px
 		visibility: hidden
 		overflow: hidden
-		
+
 // fast font-family
 =font($alias, $name)
 	@font-face
@@ -83,14 +83,14 @@
 	-ms-text-overflow: ellipsis
 	text-overflow: ellipsis
 	white-space: nowrap
-	
+
 =ie
 	*display: inline
 	*zoom: 1
-	
+
 =box
 	box-sizing: border-box
-	
+
 %pseudo
 	position: relative
 	&:before,&:after
@@ -123,6 +123,10 @@
 
 =tr($what)
 	transition: $what
+=trx($what)
+	transform: translateX($what)
+=try($what)
+	transform: translateY($what)
 
 =hide-text
 	font: 0/0 a
@@ -188,7 +192,7 @@
 	+selection
 
 =gpu
-	+transform(translate3d(0, 0, 0))
+	transform: translate3d(0, 0, 0)
 
 =smooth-triangle
 	transform: rotate(0.05deg)
@@ -248,7 +252,7 @@
 =blur($var)
 	-webkit-filter: blur($var)
 	filter: blur($var)
-	
+
 =scale($var)
 	transform: scale($var)
 
@@ -267,7 +271,7 @@
 
 =longshadow($color)
 	text-shadow: makelongshadow($color)
-	
+
 =fs($sizeValue: 16)
 	font-size: $sizeValue + px
 	font-size: $sizeValue / 10 + rem

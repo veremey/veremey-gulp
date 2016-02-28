@@ -7,8 +7,8 @@
 
 // gulp.task('jade', function() {
 //     return gulp.src([
-//             config.src.jade + '/*.jade',
-//             '!' + config.src.jade + '/_*.jade',
+//             config.src.jade + '/*.jade', 
+//             '!' + config.src.jade + '/_*.jade', 
 //             '!' + config.src.jade + '/includes/*.jade'])
 //         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
 //         // .pipe(changed(dest.html, {extension: '.html'}))
@@ -16,11 +16,11 @@
 //         .pipe(gulp.dest(config.dest.html));
 // });
 
-// //compile all jade files
+
 // gulp.task('jade-all', function() {
 //     return gulp.src([
-//         config.src.jade + '/*.jade',
-//         '!' + config.src.jade + '/_*.jade',
+//         config.src.jade + '/*.jade', 
+//         '!' + config.src.jade + '/_*.jade', 
 //         '!' + config.src.jade + '/includes/*.jade'])
 //         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
 //         .pipe(jade({pretty: true}))
