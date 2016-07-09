@@ -11,7 +11,7 @@ var config = require('../config');
 gulp.task('sass', function() {
 
     var processors = [
-        autoprefixer({browsers: ['last 10 versions'], cascade: false}),
+        autoprefixer({browsers: ['last 10 versions', 'IE 9', 'IE 10', 'IE 11', 'Opera 12'], cascade: false}),
         mqpacker({
             sort: function (a, b) {
                 a = a.replace(/\D/g,'');
