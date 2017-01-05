@@ -11,7 +11,7 @@ var config = require('../config');
 gulp.task('sass', function() {
 
     var processors = [
-        autoprefixer({browsers: ['last 10 versions', 'IE 9', 'IE 10', 'IE 11', 'Opera 12'], cascade: false}),
+        autoprefixer({browsers: ['IE 9', 'IE 10', 'IE 11', 'Opera 12', 'iOS 7', 'ios_saf 7', 'iOS 8', 'ios_saf 8', 'last 5 versions'], cascade: false}),
         mqpacker({
             sort: function (a, b) {
                 a = a.replace(/\D/g,'');
@@ -22,7 +22,7 @@ gulp.task('sass', function() {
         })
     ];
 
-    return sass(config.src.sass+'*.sass', {
+    return sass(config.src.sass+'**/*.sass', {
         sourcemap: true,
         style: 'compact',
         emitCompileError: true

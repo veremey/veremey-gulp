@@ -25,7 +25,7 @@ gulp.task('font', function(){
             .pipe(consolidate('lodash', {
                 glyphs: glyphs,
                 fontName: fontname,
-                fontPath: 'fonts/',
+                fontPath: 'font/',
                 className: 'icon'
             }))
             .pipe(gulp.dest(config.src.sass+'lib/'));
@@ -33,7 +33,7 @@ gulp.task('font', function(){
             .pipe(consolidate('lodash', {
                 glyphs: glyphs,
                 fontName: fontname,
-                fontPath: 'fonts/',
+                fontPath: 'font/',
                 className: 'icon',
                 htmlBefore: '<i class="icon ',
                 htmlAfter: '"></i>',
@@ -41,7 +41,7 @@ gulp.task('font', function(){
             }))
             .pipe(gulp.dest(config.dest.root));
     })
-    .pipe(gulp.dest(config.dest.css+'fonts/'))
+    .pipe(gulp.dest(config.dest+'font/'))
     .pipe(reload({stream: true}))
     .pipe(notify("Icon font updated!"));
 });

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+html { -webkit-box-sizing: border-box; box-sizing: border-box; font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; height: 100%; }
+
+*, *:before, *:after { -webkit-box-sizing: inherit; box-sizing: inherit; }
+
+body { -webkit-font-smoothing: grayscale; -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; text-size-adjust: none; height: 100%; margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; margin: 0; }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+
+audio:not([controls]) { display: none; height: 0; }
+
+[hidden], template { display: none; }
+
+a { background-color: transparent; -webkit-tap-highlight-color: transparent; }
+
+a:active, a:hover, a:focus { outline: 0; }
+
+button { cursor: pointer; }
+button::-moz-focus-inner { padding: 0; border: 0; }
+
+button:active, button:hover, button:focus { outline: 0; }
+
+img { border: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+i, em, dfn { font-style: italic; }
+
+blockquote { margin: 1em 40px; }
+
+mark { background: #ff0; color: #000; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+address { font-style: normal; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 1em 40px; }
+
+pre { overflow: auto; }
+
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+
+ol, ul, menu { margin: 1em 0; padding: 0; }
+
+hr { -webkit-box-sizing: content-box; box-sizing: content-box; height: 0; }
+
+ul { list-style-position: inside; }
+
+li { list-style: none; }
+
+dd { margin: 0 0 0 40px; }
+
+fieldset { background: none; border: none; }
+
+form, fieldset, input, select, textarea, button { margin: 0; padding: 0; }
+
+input, select, textarea, button { font: 12px Arial, Helvetica, sans-serif; vertical-align: baseline; }
+
+button, input { line-height: normal; }
+
+button { overflow: visible; vertical-align: top; }
+
+button::-moz-focus-inner { padding: 0; border: none; }
+
+button, input[type="submit"], input[type="button"] { cursor: pointer; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+td, th { padding: 0; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+legend { border: 0; padding: 0; }
+
+optgroup { font-weight: bold; }
+
+/*--iOS appearance input-- */
+input, textarea, select { border-radius: 0; }
+@font-face { font-family: "svgfont"; src: url("fonts/svgfont.eot"); src: url("fonts/svgfont.eot?#iefix") format("eot"), url("fonts/svgfont.woff") format("woff"), url("fonts/svgfont.woff2") format("woff2"), url("fonts/svgfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+.icon, [class^="icon-"], [class*=" icon-"] { font-family: "svgfont"; font-style: normal; font-weight: normal; text-rendering: auto; speak: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.icon, [class^="icon-"], [class*=" icon-"] { display: inline-block; }
+
+.icon-sepa:before { content: ""; }
+
+.icon-skrill:before { content: ""; }
+
+@font-face { font-family: "ProximaNovaLight"; src: uurl("font/ProximaNovaLight.woff2") format("woff2"), url("font/ProximaNovaLight.woff") format("woff"), url("font/ProximaNovaLight.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "ProximaNovaSemibold"; src: uurl("font/ProximaNovaSemibold.woff2") format("woff2"), url("font/ProximaNovaSemibold.woff") format("woff"), url("font/ProximaNovaSemibold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "LatoRegular"; src: uurl("font/LatoRegular.woff2") format("woff2"), url("font/LatoRegular.woff") format("woff"), url("font/LatoRegular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "LatoLight"; src: uurl("font/LatoLight.woff2") format("woff2"), url("font/LatoLight.woff") format("woff"), url("font/LatoLight.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "MyriadProRegular"; src: uurl("font/MyriadProRegular.woff2") format("woff2"), url("font/MyriadProRegular.woff") format("woff"), url("font/MyriadProRegular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+html { font-size: 62.5%; }
+
+body { min-width: 32rem; font-family: Arial, sans-serif; font-size: 2rem; line-height: 1.22; background-color: #333; }
+
+.out { background-color: #fff; *zoom: 1; }
+.out:after { content: " "; display: table; clear: both; }
+
+.layout { width: 96rem; width: 100%; position: relative; margin: 0 auto; *zoom: 1; }
+.layout:after { content: " "; display: table; clear: both; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0 0 0.8em; font-weight: normal; line-height: 1.1; }
+
+h1 { font-size: 2em; }
+
+h2 { font-size: 1.8em; }
+
+h3 { font-size: 1.6em; }
+
+h4 { font-size: 1.5em; }
+
+h5 { font-size: 1.4em; }
+
+h6 { font-size: 1.3em; }
+
+.header { max-width: 96rem; margin: 5rem auto 0; padding: 0 2rem; }
+.header__logo { float: left; width: 5rem; }
+.header__logo img { max-width: 100%; }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+ *{ -webkit-text-size-adjust: none; } }
+
+
+
+/*# sourceMappingURL=style.css.map */

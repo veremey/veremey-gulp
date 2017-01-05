@@ -11,9 +11,9 @@ gulp.task('jade', function() {
             '!' + config.src.jade + '/_*.jade',
             '!' + config.src.jade + '/includes/*.jade'])
         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
-        // .pipe(changed(dest.html, {extension: '.html'}))
+        // .pipe(changed(dest.root, {extension: '.root'}))
         .pipe(jade({pretty: true}))
-        .pipe(gulp.dest(config.dest.html));
+        .pipe(gulp.dest(config.dest.root));
 });
 
 
@@ -24,7 +24,7 @@ gulp.task('jade-all', function() {
         '!' + config.src.jade + '/includes/*.jade'])
         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
         .pipe(jade({pretty: true}))
-        .pipe(gulp.dest(config.dest.html));
+        .pipe(gulp.dest(config.dest.root));
 });
 
 gulp.task('jade:watch', function() {

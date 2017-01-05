@@ -1,0 +1,234 @@
+html
+	box-sizing: border-box
+	font-family: sans-serif
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+	text-size-adjust: 100%
+	height: 100%
+
+*,
+*:before,
+*:after
+	box-sizing: inherit
+
+body
+	-webkit-font-smoothing: grayscale
+	-moz-osx-font-smoothing: grayscale
+	-webkit-text-size-adjust: none
+	-ms-text-size-adjust: none
+	text-size-adjust: none
+	height: 100%
+	margin: 0
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary
+	display: block
+	margin: 0
+
+audio,
+canvas,
+progress,
+video
+	display: inline-block
+	vertical-align: baseline
+
+audio:not([controls])
+	display: none
+	height: 0
+
+[hidden],
+template
+	display: none
+
+a
+	background-color: transparent
+	-webkit-tap-highlight-color: transparent
+
+
+a:active,
+a:hover,
+a:focus
+	outline: 0
+button
+	cursor: pointer
+	&::-moz-focus-inner
+		padding: 0
+		border: 0
+button:active,
+button:hover,
+button:focus
+	outline: 0
+
+img
+	border: 0
+
+abbr[title]
+	border-bottom: 1px dotted
+
+b,
+strong
+	font-weight: bold
+i,
+em,
+dfn
+	font-style: italic
+blockquote
+	margin: 1em 40px
+mark
+	background: #ff0
+	color: #000
+p
+	margin: 0 0 1em
+	&:last-child
+		margin-bottom: 0
+address
+	font-style: normal
+small
+	font-size: 80%
+sub,
+sup
+	font-size: 75%
+	line-height: 0
+	position: relative
+	vertical-align: baseline
+sup
+	top: -.5em
+sub
+	bottom: -.25em
+
+svg:not(:root)
+	overflow: hidden
+
+figure
+	margin: 1em 40px
+
+pre
+	overflow: auto
+
+code,
+kbd,
+pre,
+samp
+	font-family: monospace, monospace
+	font-size: 1em
+
+ol,
+ul,
+menu
+	margin: 1em 0
+	padding: 0
+
+hr
+	box-sizing: content-box
+	height: 0
+
+ul
+	list-style-position: inside
+
+li
+	list-style: none
+
+dd
+	margin: 0 0 0 40px
+
+fieldset
+	background: none
+	border: none
+
+form,
+fieldset,
+input,
+select,
+textarea,
+button
+	margin: 0
+	padding: 0
+
+input,
+select,
+textarea,
+button
+	font: 12px Arial, Helvetica, sans-serif
+	vertical-align: baseline
+
+button,
+input
+	line-height: normal
+
+button
+	overflow: visible
+	vertical-align: top
+
+button::-moz-focus-inner
+	padding: 0
+	border: none
+
+button,
+input[type="submit"],
+input[type="button"]
+	cursor: pointer
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]
+	-webkit-appearance: button
+	cursor: pointer
+
+button[disabled],
+html input[disabled]
+	cursor: default
+
+textarea
+	overflow: auto
+	vertical-align: top
+	resize: vertical
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+td,
+th
+	padding: 0
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+	border: 0
+	padding: 0
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+	height: auto
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration
+	-webkit-appearance: none
+
+legend
+	border: 0
+	padding: 0
+
+optgroup
+	font-weight: bold
+
+/*--iOS appearance input--*/
+
+input,
+textarea,
+select
+	border-radius: 0
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+	*
+		-webkit-text-size-adjust: none

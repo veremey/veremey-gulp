@@ -30,5 +30,8 @@ nbproject
 .tmp
 node_modules
 bower_components
+*/**/node_modules
+*/**/bower_components
 site/lib
-
+*.todo
+*/**/*.todo
