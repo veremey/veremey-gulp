@@ -1,2 +1,20 @@
 // Normally footer styles
 
+.footer
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	height: $footerHeight
+
+	background-color: #999
+
+	&__wrap
+		+wrapper()
+		+row-flex()
+		+justify-content(center)
+
+		+align-self(stretch)
+		line-height: 100px
+		height: 100%
+		margin: 0 auto

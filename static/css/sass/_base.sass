@@ -32,21 +32,22 @@ $brown: #644650
 
 
 // size
-$max-width: 96rem
+$max-width: 960px
+$footerHeight: 100px
 
-html
-	font-size: 62.5%
 body
-	min-width: 32rem
+	min-width: 300px
 	font-family:  Arial, sans-serif
-	font-size: 2rem
+	font-size: 20px
 	line-height: 1.22
 	background-color: #333
 
 // common blocks
 
 .out
+	position: relative
 	background-color: #fff
+	padding-bottom: $footerHeight
 	+clr
 
 .layout

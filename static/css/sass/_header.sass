@@ -1,10 +1,22 @@
 // Normally header styles
 .header
-	max-width: $max-width
-	margin: 5rem auto 0
-	padding: 0 2rem
-	&__logo
-		float: left
-		width: 5rem
-		img
-			max-width: 100%
+	background-color: #936
+	height: 80px
+.wrapper
+	+wrapper()
+.row
+	height: 80px
+	+row-flex()
+	+justify-content(center)
+
+	line-height: 80px
+
+	.col
+		+col()
+		+col-6()
+		+col-md-10()
+		+col-xs-20()
+		background-color: #456
+		color: #fff
+
+		text-align: center
